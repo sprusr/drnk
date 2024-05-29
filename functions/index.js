@@ -15,7 +15,7 @@ const bestPerformingOnTap = async () => {
 
 export async function onRequest(context) {
   const { ale, keg, cider } = await bestPerformingOnTap();
-  return new Response.json([{
+  return Response.json([{
     "verb": "say",
     "text": `Here are the best price performance drinks currently on tap. Ale is: ${ale ?? 'unknown'}. Keg is: ${keg ?? 'unknown'}. Cider is ${cider ?? 'unknown'}. Cheers!`
   },
